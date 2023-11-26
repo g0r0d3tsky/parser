@@ -31,7 +31,7 @@ func TestParseYAML(t *testing.T) {
 	}
 
 	expectedConfig := cfgparser.Config{
-		Port:    8080,
+		Port:    "8080",
 		Host:    "example.com",
 		Timeout: 10,
 	}

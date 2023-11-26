@@ -8,7 +8,7 @@ import (
 )
 
 type Config struct {
-	Port    int    `yaml:"port"`
+	Port    string `yaml:"port"`
 	Host    string `yaml:"host"`
 	Timeout int    `yaml:"timeout"`
 }
@@ -26,7 +26,7 @@ func ParseYAML(filePath string) (Config, error) {
 		line = strings.TrimSpace(line)
 
 		if strings.HasPrefix(line, "port:") {
-			var port int
+			var port string
 			_, err := fmt.Sscanf(line, "port: %d", &port)
 			if err != nil {
 				return config, fmt.Errorf("failed to parse port: %w", err)
