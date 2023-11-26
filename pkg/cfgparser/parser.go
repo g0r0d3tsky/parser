@@ -27,7 +27,7 @@ func ParseYAML(filePath string) (Config, error) {
 
 		if strings.HasPrefix(line, "port:") {
 			var port string
-			_, err := fmt.Sscanf(line, "port: %d", &port)
+			_, err := fmt.Sscanf(line, "port: %s", &port)
 			if err != nil {
 				return config, fmt.Errorf("failed to parse port: %w", err)
 			}
